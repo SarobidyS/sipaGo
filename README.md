@@ -1,6 +1,6 @@
 # sipaGo
 
-# Clone or download it from the link below.
+## Clone or download it from the link below.
 
 # then:
   # cd sipaGo
