@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vos notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let friends of listNotif">
+    <ion-item (click)="confirm(friends.name)" [disabled]="friends.type">
+      <ion-icon name="person-add" slot="start" color="dark"></ion-icon>
+      <ion-label *ngIf="friends.type">{{friends.name }} a accepter votre demande</ion-label>
+      <ion-label *ngIf="!friends.type">{{ friends.name }} vous a envoyer une demande</ion-label>
+      <ion-icon name="done-all" slot="end" color="danger"></ion-icon>
+    </ion-item>
+  </div>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-title>Dashboard</ion-title>
+      <ion-badge color="warning" slot="end">{{ numberOfNotif }}</ion-badge>
+      <ion-icon color="dark" slot="end" name="notifications" (click)="go_notif()"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div text-center class="ion-text-uppercase">
+    <ion-label color="danger" style="font-family: Ailerons; font-size: 24px">Liste de mes amis</ion-label>
+  </div>
+  <div *ngIf="lenghtOf">
+    <ion-card>
+      <img src="/assets/img/girl_friends.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>Bonjour,</ion-card-subtitle>
+        <ion-card-title>{{ myName }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        SipaGo est bien plus amusant avec des amis.
+        Allez dans parametre pour ajouter de nouveaux amis.
+        :)
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngFor="let friend of myFriendData">
+
+
+    <ion-grid>
+      <ion-list class="center">
+        <ion-row>
+          <ion-col size='8'>
+            <div>
+              <ion-item>
+                <ion-icon name="person" color="dark"></ion-icon>
+                <ion-label class="ion-text-capitalize"> {{ friend.name }}</ion-label>
+                <ion-icon *ngIf="friend.isHitako" name="wifi" (click)="voir(friend.name)" color="dark"></ion-icon>
+                <ion-icon *ngIf="!friend.isHitako" name="eye-off" color="dark"></ion-icon>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-item size='50%' class="apekarina">
+                <ion-label class="ion-text-capitalize">Vue</ion-label>
+                <ion-checkbox color="dark" slot="end" [(ngModel)]="friend.isMahita" (click)="aseho(friend.name)">
+                </ion-checkbox>
+              </ion-item>
+
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-grid>
+
+  </div>
+</ion-content>

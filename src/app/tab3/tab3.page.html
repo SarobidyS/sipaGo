@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-title>Map</ion-title>
+      <ion-badge color="warning" slot="end">{{ numberOfNotif }}</ion-badge>
+      <ion-icon color="dark" slot="end" name="notifications" (click)="go_notif()"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div id="map" style="height:100%;"></div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Creer un Nouveau Compte
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  
+
+
+<ion-content>
+        <div padding>
+           <div text-center> 
+                  <img src="/assets/img/create_dark.jpg" alt="" width="100%" style="border-radius: 10px;"/> 
+               <ion-item>
+                   <ion-icon name="clipboard" color="dark"></ion-icon>
+                   <ion-input placeholder=" Firstname" [(ngModel)]="firstname"></ion-input>
+               </ion-item>
+               <ion-item>
+                  <ion-icon name="clipboard" color="dark"></ion-icon>
+                  <ion-input placeholder=" Lastname" [(ngModel)]="lastname"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-icon name="code-working" color="dark"></ion-icon>
+                  <ion-input placeholder=" Username" [(ngModel)]="username"></ion-input>
+              </ion-item>
+               <ion-item>
+                 <ion-icon name="key" color="dark"></ion-icon>
+                 <ion-input placeholder=" Mot de passe" [(ngModel)]="mdp" type="password"></ion-input>
+               </ion-item>
+               <ion-item>
+                  <ion-icon name="key" color="dark"></ion-icon>
+                  <ion-input placeholder=" Confirmer mot de passe" [(ngModel)]="confirmMdp" type="password"></ion-input>
+              </ion-item>
+               
+                   <ion-button type="submit" color="danger" (click)="createAccount()">Creer un compte
+                    <ion-icon name="attach" slot="start"></ion-icon>
+                   </ion-button>
+                   <ion-button type="submit" color="danger" (click)="navigateToConnectPage()">Se connecter
+                    <ion-icon name="log-in" slot="start"></ion-icon>
+                   </ion-button>
+             </div>
+        </div>
+</ion-content>

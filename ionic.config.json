@@ -1,0 +1,8 @@
+{
+  "name": "SipaGoApp",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

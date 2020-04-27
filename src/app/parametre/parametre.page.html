@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-title>Vos Parametres</ion-title>
+      <ion-badge color="warning" slot="end">{{ numberOfNotif }}</ion-badge>
+      <ion-icon color="dark" slot="end" name="notifications" (click)="go_notif()"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-item>
+    <ion-icon name="person-add" color="dark" slot="start"></ion-icon>
+    <ion-label>Rechercher des amis</ion-label>
+    <ionic-selectable [(ngModel)]="selected_user" [items]="users" itemValueField="id" itemTextField="name"
+      headerColor='dark' color="dark" [canSearch]='true' searchFailText='Aucune personne trouver ...'>
+      <ng-template ionicSelectableCloseButtonTemplate>
+        <ion-icon name='close-circle'></ion-icon>
+      </ng-template>
+
+    </ionic-selectable>
+  </ion-item>
+
+  <div text-center>
+    <ion-button type="submit" color="dark" (click)="addFriends()">Ajouter</ion-button>
+  </div>
+
+
+
+</ion-content>
+<ion-footer text-center>
+  <ion-toolbar>
+    <ion-button (click)="seDeconnecter()" color="danger">Se deconnecter
+      <ion-icon name="log-out" slot="end"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

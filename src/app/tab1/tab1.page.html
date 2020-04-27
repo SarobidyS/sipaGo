@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Se Connecter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <img src="/assets/img/Sipago1.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-title>Welcome to SipaGo</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+</ion-content>
+<ion-content >
+   <div padding>
+      <div text-center> 
+          <ion-item>
+              <ion-icon name="person" color="dark"></ion-icon>
+              <ion-input placeholder="  username" [(ngModel)]="username" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="finger-print" color="dark"></ion-icon>
+            <ion-input placeholder="  mot de passe" [(ngModel)]="mdp" type="password"></ion-input>
+          </ion-item>
+          
+              <ion-button type="submit" color="dark" (click)="toConnect()">Se connecter
+                <ion-icon name="log-in" slot="start"></ion-icon>
+              </ion-button>
+        </div>
+   </div>
+
+    
+    
+      
+  
+</ion-content>

@@ -1,0 +1,37 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+ion-item {
+  --border-color: var(--ion-color-dark);
+}
+
+:host {
+  ion-item {
+      --border-color: white; // default underline color
+      --highlight-color-invalid: red; // invalid underline color
+      --highlight-color-valid: red; // valid underline color
+  }
+}
+
+
+ion-title{
+  font-family : Bahagia;
+  font-size: 24px;
+}
+
+ion-card-title{
+  font-family: theSecret;
+  font-size: 30px;
+}
+
+ion-input {
+  font-style: italic;
+}
+
+ion-button{
+    font-family: Ailerons;
+    font-size: 16px;
+    font-weight: 1000;
+}
